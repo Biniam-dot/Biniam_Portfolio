@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biniam Negatu | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>* {
+  margin: 0;const typedText = document.querySelector(".typed-text");
+const words = ["Cool IT Graduate", "Web Developer", "Graphic Designer", "Creative Thinker"];
+let wordIndex = 0;
+let charIndex = 0;
+let typingDelay = 100;
+let erasingDelay = 50;
+let newWordDelay = 2000;
+
+function type() {
+  if (charIndex < words[wordIndex].length) {
+    typedText.textContent += words[wordIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } else {
+    setTimeout(erase, newWordDelay);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    typedText.textContent = words[wordIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } else {
+    wordIndex = (wordIndex + 1) % words.length;
+    setTimeout(type, typingDelay + 300);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (words.length) setTimeout(type, 1000);
+});
+
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin: 20px 0 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 60px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.skills-list li {
+  background: #e0e0e0;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skills-list li:hover {
+  transform: scale(1.05);
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #aaa;
+}
+
+.typed-text {
+  border-right: 2px solid #fff;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background: white;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    background: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.profile-pic {
+  max-width: 200px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+<body>
+  <header>
+    <nav>
+      <h1>Biniam Negatu</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <section class="hero">
+      <h2><span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+      <p>Software Developer | Graphic Designer | Tech Thinker</p>
+    </section>
+  </header>
+
+  <main>
+    <section id="about">
+<img src="images/profile.jpg" alt="Biniam Negatu" class="profile-pic" />
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate IT graduate with experience in software development and graphic design. I explore the digital world with a cool mindset and creative touch.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML, CSS, JavaScript</li>
+        <li>Software Development</li>
+        <li>Graphic Design</li>
+        <li>IT Support</li>
+        <li>Live Streaming & Film Production</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>This website showcases my skills and background as a creative IT professional.</p>
+      </div>
+      <div class="project-card">
+        <h3>Graphic Design Works</h3>
+        <p>Designed eye-catching content for social media and events.</p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p>
+        Completed a one-week training at a film production and live streaming company. Gained hands-on experience with media tools and team-based projects.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:biniamnegatu055@gmail.com">biniamnegatu055@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/biniam_negatu" target="_blank">@biniam_negatu</a></p>
+      <p>Telegram: <a href="https://t.me/Biniam_N" target="_blank">@Biniam_N</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Biniam Negatu. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
