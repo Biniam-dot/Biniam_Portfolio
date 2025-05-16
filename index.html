@@ -1,80 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biniam Negatu | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biniam's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Fira Code', monospace;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        header h1 {
+            font-size: 3rem;
+            animation: fadeInDown 1s ease;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #a0c4ff;
+        }
+        section {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .project {
+            background: #1e1e2f;
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        .project h3 {
+            color: #90e0ef;
+            margin-top: 0;
+        }
+        .project p {
+            color: #ccc;
+        }
+        .contact {
+            text-align: center;
+            padding: 2rem;
+            background-color: #111;
+        }
+        .contact a {
+            color: #00f7ff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Biniam Negatu</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <section class="hero">
-      <h2><span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
-      <p>Software Developer | Graphic Designer | Tech Thinker</p>
-    </section>
-  </header>
+    <header>
+        <h1>Hello, I'm Biniam</h1>
+        <p>Web Developer • Software Graduate • Tech Enthusiast</p>
+    </header>
 
-  <main>
-    <section id="about">
-<img src="images/profile.jpg" alt="Biniam Negatu" class="profile-pic" />
-      <h2>About Me</h2>
-      <p>
-        I'm a passionate IT graduate with experience in software development and graphic design. I explore the digital world with a cool mindset and creative touch.
-      </p>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>HTML, CSS, JavaScript</li>
-        <li>Software Development</li>
-        <li>Graphic Design</li>
-        <li>IT Support</li>
-        <li>Live Streaming & Film Production</li>
-      </ul>
+    <section>
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>A personal responsive website built with HTML, CSS, and JavaScript.</p>
+                <a href="#">View Demo</a>
+            </div>
+            <div class="project">
+                <h3>Task Manager App</h3>
+                <p>A simple to-do list app with local storage and priority sorting.</p>
+                <a href="#">View Demo</a>
+            </div>
+            <div class="project">
+                <h3>Login Page UI</h3>
+                <p>A modern login/signup form with responsive design and validation.</p>
+                <a href="#">View Demo</a>
+            </div>
+        </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>This website showcases my skills and background as a creative IT professional.</p>
-      </div>
-      <div class="project-card">
-        <h3>Graphic Design Works</h3>
-        <p>Designed eye-catching content for social media and events.</p>
-      </div>
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: biniamnegatu055@gmail.com</p>
+        <p>
+            <a href="https://instagram.com/biniam_negatu" target="_blank">Instagram</a>
+            <a href="https://t.me/Biniam_N" target="_blank">Telegram</a>
+        </p>
     </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <p>
-        Completed a one-week training at a film production and live streaming company. Gained hands-on experience with media tools and team-based projects.
-      </p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:biniamnegatu055@gmail.com">biniamnegatu055@gmail.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/biniam_negatu" target="_blank">@biniam_negatu</a></p>
-      <p>Telegram: <a href="https://t.me/Biniam_N" target="_blank">@Biniam_N</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Biniam Negatu. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
